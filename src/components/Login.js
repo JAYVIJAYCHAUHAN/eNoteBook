@@ -32,13 +32,16 @@ function Login(props) {
         },
         validationSchema: loginSchema,
         onSubmit: async (values) => {
-            const response = await fetch("http://localhost:3000/api/auth/login", {
-                method: 'POST',
+            const response = await fetch(
+              "https://enotebook8.vercel.app/api/auth/login",
+              {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json'
+                  "Content-Type": "application/json",
                 },
-                body: JSON.stringify(values)
-            })
+                body: JSON.stringify(values),
+              }
+            );
             const json = await response.json()
 
             if (json.success) {
