@@ -25,7 +25,9 @@
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && workbox generateSW workbox-config.js",
+     "precache": "workbox generateSW workbox-config.js",
+  "build-sw": "workbox generateSW workbox-config.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "both": "concurrently \" npm run start \" \" nodemon backend/index.js \""
@@ -47,5 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "workbox-cli": "^7.0.0"
   }
 }
